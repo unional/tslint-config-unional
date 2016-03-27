@@ -11,7 +11,7 @@ npm install tslint-config-unional
 ```js
 // tslint.json
 {
-  "extends": "unional",
+  "extends": "tslint-config-unional",
   "rules": {
     // your customization
   }
