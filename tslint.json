@@ -16,7 +16,7 @@
       true,
       "spaces"
     ],
-    "interface-name": false,
+    "interface-name": [true, "never-prefix"],
     "jsdoc-format": true,
     "label-position": true,
     "label-undefined": true,
