@@ -3,6 +3,9 @@
   "version": "0.2.2",
   "description": "tslint config that follows uninoal/typescript style guide",
   "main": "tslint.json",
+  "files": [
+    "tslint.json"
+  ],
   "scripts": {
     "test": "gulp"
   },
