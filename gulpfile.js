@@ -1,21 +1,22 @@
-var gulp = require('gulp');
-var tslint = require('gulp-tslint');
-var through = require('through');
-var gutil = require('gulp-util');
-var PluginError = gutil.PluginError;
+const gulp = require('gulp');
+const gulpTslint = require('gulp-tslint');
+const tslint = require('tslint');
+const through = require('through');
+const gutil = require('gulp-util');
+const PluginError = gutil.PluginError;
 
 gulp.task('tslint-positive', function() {
   return gulp.src('spec/*.pass.ts')
-    .pipe(tslint({
-      rulesDirectory: "node_modules/tslint-eslint-rules/dist/rules"
+    .pipe(gulpTslint({
+      configuration: tslint.findConfiguration()
     }))
-    .pipe(tslint.report('verbose'));
+    .pipe(gulpTslint.report('verbose'));
 });
 
 gulp.task('tslint-negative', function() {
   return gulp.src('spec/*.fail.ts')
-    .pipe(tslint({
-      rulesDirectory: "node_modules/tslint-eslint-rules/dist/rules"
+    .pipe(gulpTslint({
+      configuration: tslint.findConfiguration()
     }))
     .pipe((function() {
       var hasError = false;

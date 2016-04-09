@@ -1,4 +1,4 @@
-function foo(
+function align(
   param1: number,
   param2: number,
   param3: number, param4: number): number {
@@ -8,12 +8,12 @@ function foo(
   return a;
 }
 
-foo(0,
+align(0,
   1,
   2,
   3);
 
 {
-  foo(1, 2, 3, 4);
-  foo(1, 1, 1, 1);
+  align(1, 2, 3, 4);
+  align(1, 1, 1, 1);
 }

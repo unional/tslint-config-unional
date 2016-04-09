@@ -1,6 +1,6 @@
-let x = 3;
-// if (x) x = 2;
+let curly = 3;
+// if (curly) curly = 2;
 
-if (x) {
-  x = 1;
+if (curly) {
+  curly = 1;
 }

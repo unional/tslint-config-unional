@@ -1,4 +1,4 @@
-var x, y;
-if (x = y) {
-
+let a, y;
+if (a = y) {
+  y++;
 }

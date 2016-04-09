@@ -5,10 +5,10 @@
 // Okey too
 
 /**
- * My foo function
+ * My commentFormat function
  * @var {string} p1 some input value
  * @var {number} [p2] some optional value
  */
-function foo(p1: string, p2 = 2): boolean {
+function commentFormat(p1: string, p2 = 2): boolean {
   return false;
 }

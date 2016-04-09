@@ -1,1 +1,1 @@
-class MyClass { }
+class ClassName { }

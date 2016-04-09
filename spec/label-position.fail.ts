@@ -1,2 +1,3 @@
+/* tslint:disable:no-unused-variable */
 start:
-var x = 1;
+const labelPosition = 1;

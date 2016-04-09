@@ -1,5 +1,5 @@
 /* tslint:disable:no-empty */
-class MyClass {
+class MemberAccess {
   someProperty: string;
   constructor() { }
   someFunction(): void { }

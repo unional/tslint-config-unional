@@ -1,18 +1,18 @@
-let x = 2;
+let oneLine = 2;
 
-if (x) {
-  x = 1;
+if (oneLine) {
+  oneLine = 1;
 }
 else {
-  x = 3;
+  oneLine = 3;
 }
 
 try {
-  x = 2;
+  oneLine = 2;
 }
 catch (e) {
-  x = 1;
+  oneLine = 1;
 }
 finally {
-  x = 4;
+  oneLine = 4;
 }

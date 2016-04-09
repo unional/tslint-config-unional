@@ -1,13 +1,13 @@
 /* tslint:disable:no-empty no-unused-variable */
-class MyClass {
+class MemberOrdering {
   constructor() { }
 
   static someStaticProperty: string;
+  static someStaticMethod(): void { }
 
   someProperty: string;
   private somePrivateProperty: string;
 
-  static someStaticMethod(): void { }
   someFunction(): void { }
   private somePrivateFunction(): void { }
 }
