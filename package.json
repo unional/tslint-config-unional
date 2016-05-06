@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-unional",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "tslint config that follows uninoal/typescript style guide",
   "main": "tslint.json",
   "files": [
