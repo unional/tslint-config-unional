@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-unional",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "tslint config that follows uninoal/typescript style guide",
   "main": "configs/index.js",
   "files": [
