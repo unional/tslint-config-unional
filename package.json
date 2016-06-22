@@ -2,9 +2,9 @@
   "name": "tslint-config-unional",
   "version": "0.2.7",
   "description": "tslint config that follows uninoal/typescript style guide",
-  "main": "tslint.json",
+  "main": "configs/index.js",
   "files": [
-    "tslint.json"
+    "configs/*"
   ],
   "scripts": {
     "test": "gulp"

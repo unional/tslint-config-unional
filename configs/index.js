@@ -1,4 +1,8 @@
-{
+/**
+ * This is the normal version.
+ * Some rules are relaxed to enable faster development and less typing.
+ */
+module.exports = {
   "rules": {
     "align": [
       true,
@@ -90,7 +94,6 @@
     ],
     "typedef": [
       true,
-      "call-signature",
       "property-declaration",
       "member-variable-declaration"
     ],

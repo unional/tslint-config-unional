@@ -5,18 +5,20 @@ const through = require('through');
 const gutil = require('gulp-util');
 const PluginError = gutil.PluginError;
 
-gulp.task('tslint-positive', function() {
-  return gulp.src('spec/*.pass.ts')
+const configNames = ['index', 'strict'];
+
+function positiveTest(config) {
+  return gulp.src(`spec/${config}/*.pass.ts`)
     .pipe(gulpTslint({
-      configuration: tslint.findConfiguration()
+      configuration: tslint.findConfiguration(`./configs/${config}.js`)
     }))
     .pipe(gulpTslint.report('verbose'));
-});
+}
 
-gulp.task('tslint-negative', function() {
-  return gulp.src('spec/*.fail.ts')
+function negativeTest(config) {
+  return gulp.src(`spec/${config}/*.fail.ts`)
     .pipe(gulpTslint({
-      configuration: tslint.findConfiguration()
+      configuration: tslint.findConfiguration(`./configs/${config}.js`)
     }))
     .pipe((function() {
       var hasError = false;
@@ -36,8 +38,24 @@ gulp.task('tslint-negative', function() {
         }
       });
     })());
+}
+
+gulp.task('tslint-index-positive', function() {
+  return positiveTest('index');
 });
 
-gulp.task('tslint', ['tslint-positive', 'tslint-negative']);
+gulp.task('tslint-index-negative', function() {
+  return negativeTest('index');
+});
+
+gulp.task('tslint-strict-positive', function() {
+  return positiveTest('strict');
+});
+
+gulp.task('tslint-strict-negative', function() {
+  return negativeTest('strict');
+});
+
+gulp.task('tslint', ['tslint-index-positive', 'tslint-index-negative', 'tslint-strict-positive', 'tslint-strict-negative']);
 
 gulp.task('default', ['tslint']);
