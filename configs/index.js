@@ -94,8 +94,7 @@ module.exports = {
     ],
     "typedef": [
       true,
-      "property-declaration",
-      "member-variable-declaration"
+      "property-declaration"
     ],
     "typedef-whitespace": [
       true,

@@ -10,3 +10,8 @@ gulp.task('test', (done) => {
 function foo(a: string) {
   return 123;
 }
+
+// typedef: member-variable-declaration
+class Foo {
+  somthing = 1;
+}
