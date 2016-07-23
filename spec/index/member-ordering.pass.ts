@@ -1,9 +1,9 @@
 /* tslint:disable:no-empty no-unused-variable */
 class MemberOrdering {
-  constructor() { }
-
   static someStaticProperty: string;
   static someStaticMethod(): void { }
+
+  constructor() { }
 
   someProperty: string;
   private somePrivateProperty: string;

@@ -20,9 +20,9 @@ function negativeTest(config) {
     .pipe(gulpTslint({
       configuration: tslint.findConfiguration(`./configs/${config}.js`)
     }))
-    .pipe((function() {
+    .pipe((function () {
       var hasError = false;
-      return through(function(file) {
+      return through(function (file) {
         if (file.tslint.failureCount === 0) {
           gutil.log(
             `[${gutil.colors.cyan('gulp-tslint')}]`,
@@ -30,7 +30,7 @@ function negativeTest(config) {
             `(negative) ${file.relative}`);
           hasError = true;
         }
-      }, function() {
+      }, function () {
         if (hasError) {
           this.emit('error', new PluginError('gulp-tslint', 'Failed negative test(s).'));
         } else {
@@ -40,22 +40,38 @@ function negativeTest(config) {
     })());
 }
 
-gulp.task('tslint-index-positive', function() {
+gulp.task('tslint-index-positive', function () {
   return positiveTest('index');
 });
 
-gulp.task('tslint-index-negative', function() {
+gulp.task('tslint-index-negative', function () {
   return negativeTest('index');
 });
 
-gulp.task('tslint-strict-positive', function() {
+gulp.task('tslint-strict-positive', function () {
   return positiveTest('strict');
 });
 
-gulp.task('tslint-strict-negative', function() {
+gulp.task('tslint-strict-negative', function () {
   return negativeTest('strict');
 });
 
-gulp.task('tslint', ['tslint-index-positive', 'tslint-index-negative', 'tslint-strict-positive', 'tslint-strict-negative']);
+
+gulp.task('tslint-standard-positive', function () {
+  return positiveTest('standard');
+});
+
+gulp.task('tslint-standard-negative', function () {
+  return negativeTest('standard');
+});
+
+gulp.task('tslint', [
+  'tslint-index-positive',
+  'tslint-index-negative',
+  'tslint-standard-positive',
+  'tslint-standard-negative',
+  'tslint-strict-positive',
+  'tslint-strict-negative'
+]);
 
 gulp.task('default', ['tslint']);
