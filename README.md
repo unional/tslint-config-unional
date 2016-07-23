@@ -1,6 +1,8 @@
 # tslint-config-unional
 
-A [`tslint`](https://github.com/palantir/tslint) extension package that contains several styles and review several other styles.
+[![Build Status](https://travis-ci.org/unional/tslint-config-unional.svg?branch=master)](https://travis-ci.org/unional/tslint-config-unional)
+
+A [`tslint`](https://github.com/palantir/tslint) extension package with several styles to choose from.
 
 ## Design Principles
 
