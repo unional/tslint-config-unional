@@ -1,5 +1,5 @@
 module.exports = {
-  extend: 'tslint-config-standard',
+  extends: 'tslint-config-standard',
   rules: {
     "one-line": [
       true,
