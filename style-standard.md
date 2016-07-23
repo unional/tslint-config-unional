@@ -26,7 +26,6 @@ IDEs that work fine with `tslint-config-standard`:
 
 - [Visual Studio Code](http://code.visualstudio.com)
 
-
 IDEs that needs `tslint-config-unional/standard`:
 
 - [atom](https://atom.io)

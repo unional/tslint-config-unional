@@ -2,7 +2,10 @@
  * This is the normal version.
  * Some rules are relaxed to enable faster development and less typing.
  */
+var path = require('path');
+
 module.exports = {
+  rulesDirectory: path.join(path.dirname(require.resolve('tslint-eslint-rules')), 'dist/rules'),
   "rules": {
     "align": [
       true,
@@ -127,6 +130,14 @@ module.exports = {
       "check-operator",
       "check-separator",
       "check-type"
+    ],
+    // tslint-eslint-rules
+    "brace-style": [
+      true,
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
     ]
   }
 }

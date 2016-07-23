@@ -14,7 +14,7 @@ here are the principles that they all follows:
 - Each team member can use their own IDE of choice
 - The formatter available on each IDE should work with each configuration
 - Code should look well and consistent on each IDE with folding
-  - so that when you stop by your team member's cube, the code looks the same. 
+  - so that when you stop by your team member's cube, the code looks the same.
   - i.e., unfortunately, no [tab]
 - Thrive for easy to write (with fewest keystrokes) while keeping the code clean
 

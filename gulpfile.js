@@ -10,7 +10,7 @@ const configNames = ['index', 'strict'];
 function positiveTest(config) {
   return gulp.src(`spec/${config}/*.pass.ts`)
     .pipe(gulpTslint({
-      configuration: tslint.findConfiguration(`./configs/${config}.js`)
+      configuration: tslint.findConfiguration(`./${config}.js`)
     }))
     .pipe(gulpTslint.report('verbose'));
 }
@@ -18,7 +18,7 @@ function positiveTest(config) {
 function negativeTest(config) {
   return gulp.src(`spec/${config}/*.fail.ts`)
     .pipe(gulpTslint({
-      configuration: tslint.findConfiguration(`./configs/${config}.js`)
+      configuration: tslint.findConfiguration(`./${config}.js`)
     }))
     .pipe((function () {
       var hasError = false;

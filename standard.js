@@ -6,5 +6,12 @@ module.exports = {
       "check-open-brace",
       "check-whitespace"
     ],
+    "brace-style": [
+      true,
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
+    ]
   }
 }
