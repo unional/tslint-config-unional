@@ -1,6 +1,10 @@
 module.exports = {
   extends: 'tslint-config-standard',
   rules: {
+    "align": [
+      true,
+      "statements"
+    ],
     "max-line-length": [false],
     "one-line": [
       true,
