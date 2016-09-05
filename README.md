@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/unional/tslint-config-unional.png?label=ready&title=Ready)](https://waffle.io/unional/tslint-config-unional)
 # tslint-config-unional
 
 [![Build Status](https://travis-ci.org/unional/tslint-config-unional.svg?branch=master)](https://travis-ci.org/unional/tslint-config-unional)
