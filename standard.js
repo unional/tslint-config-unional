@@ -12,6 +12,7 @@ module.exports = {
       {
         "allowSingleLine": true
       }
-    ]
+    ],
+    "semicolon": false
   }
 }
