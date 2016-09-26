@@ -38,10 +38,10 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-tslint": "^4.3.3",
+    "gulp-tslint": "6.1.1",
     "gulp-util": "^3.0.7",
     "through": "^2.3.8",
     "tslint": "^3.7.1",
-    "typescript": "^1.8.9"
+    "typescript": "2.0.3"
   }
 }

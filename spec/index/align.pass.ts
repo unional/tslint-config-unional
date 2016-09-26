@@ -4,7 +4,7 @@ function align(
   param3: number, param4: number): number {
   let a = 1;
   a += param1 + param2 + param3 + param4 + param1 + param2 + param3 + param4 + param1 + param2 + param3 + param4 + param1 + param2 + param3 + param4 + param1 + param2 + param3 + param4
-  + param1 + param2 + param3 + param4;
+    + param1 + param2 + param3 + param4;
   return a;
 }
 
