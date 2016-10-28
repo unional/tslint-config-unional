@@ -49,6 +49,7 @@ Also, the best thing to do and file issues on your IDE so that you can use the s
 - [Default](style-default.md)
 - [Strict](style-strict.md)
 - [Standard](style-standard.md) (based off of [`tslint-config-standard`](https://github.com/blakeembrey/tslint-config-standard))
+- [Semi Standard](style-semi-standard.md)
 
 ## LICENSE
 
