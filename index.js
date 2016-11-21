@@ -26,7 +26,6 @@ module.exports = {
     "interface-name": [true, "never-prefix"],
     "jsdoc-format": true,
     "label-position": true,
-    "label-undefined": true,
     "member-access": false,
     "member-ordering": [
       true,
@@ -48,7 +47,6 @@ module.exports = {
       "debug"
     ],
     "no-construct": true,
-    "no-constructor-vars": false,
     "no-debugger": true,
     "no-duplicate-variable": true,
     "no-empty": true,
@@ -61,7 +59,6 @@ module.exports = {
     "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
-    "no-unreachable": true,
     "no-unused-expression": true,
     "no-use-before-declare": false,
     "no-var-keyword": true,
@@ -72,6 +69,7 @@ module.exports = {
       "check-open-brace",
       "check-whitespace"
     ],
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
     "quotemark": [
       true,
       "single",
@@ -115,7 +113,6 @@ module.exports = {
         "variable-declaration": "space"
       }
     ],
-    "use-strict": [false],
     "variable-name": [
       true,
       "check-format",

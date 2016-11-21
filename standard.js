@@ -18,6 +18,7 @@ module.exports = {
       {
         "allowSingleLine": true
       }
-    ]
+    ],
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
   }
 }

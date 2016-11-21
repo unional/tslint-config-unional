@@ -5,12 +5,10 @@ const through = require('through');
 const gutil = require('gulp-util');
 const PluginError = gutil.PluginError;
 
-const configNames = ['index', 'strict'];
-
 function positiveTest(config) {
   return gulp.src(`spec/${config}/*.pass.ts`)
     .pipe(gulpTslint({
-      configuration: tslint.findConfiguration(`./${config}.js`),
+      configuration: `./${config}.js`,
       formatter: 'verbose'
     }))
     .pipe(gulpTslint.report());
@@ -19,7 +17,8 @@ function positiveTest(config) {
 function negativeTest(config) {
   return gulp.src(`spec/${config}/*.fail.ts`)
     .pipe(gulpTslint({
-      configuration: tslint.findConfiguration(`./${config}.js`)
+      configuration: `./${config}.js`,
+      formatter: 'verbose'
     }))
     .pipe((function () {
       var hasError = false;
@@ -27,7 +26,7 @@ function negativeTest(config) {
         if (file.tslint.failureCount === 0) {
           gutil.log(
             `[${gutil.colors.cyan('gulp-tslint')}]`,
-            gutil.colors.red('error'),
+            gutil.colors.red(`error: ${file.tslint.failureCount}`),
             `(negative) ${file.relative}`);
           hasError = true;
         }

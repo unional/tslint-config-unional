@@ -8,8 +8,7 @@ function align(
   return a;
 }
 
-align(0,
-  1,
+align(0,  1,
   2,
   3);
 
