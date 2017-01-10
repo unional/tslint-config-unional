@@ -6,12 +6,6 @@ module.exports = {
     // so that this style stays as pure `standard` instead of `semistandard`
     // This happens relatively rare so I justify it.
     "align": false,
-    "max-line-length": false,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-whitespace"
-    ],
     "brace-style": [
       true,
       "stroustrup",
@@ -19,6 +13,12 @@ module.exports = {
         "allowSingleLine": true
       }
     ],
-    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "max-line-length": false,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-whitespace"
+    ],
+    "one-variable-per-declaration": [true, "ignore-for-loop"]
   }
 }
