@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "tslint-config-standard": "2.0.0",
-    "tslint-eslint-rules": "3.0.0"
+    "tslint-eslint-rules": "3.2.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
