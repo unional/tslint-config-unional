@@ -34,7 +34,7 @@
     "tslint": ">=4.0.1"
   },
   "dependencies": {
-    "tslint-config-standard": "2.0.0",
+    "tslint-config-standard": "3.0.0",
     "tslint-eslint-rules": "3.2.3"
   },
   "devDependencies": {
