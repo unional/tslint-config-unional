@@ -13,7 +13,9 @@ module.exports = {
         "allowSingleLine": true
       }
     ],
+    "curly": false,
     "max-line-length": false,
+    "member-ordering": false,
     "one-line": [
       true,
       "check-open-brace",
