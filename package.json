@@ -31,11 +31,11 @@
   },
   "homepage": "https://github.com/unional/typescript",
   "peerDependencies": {
-    "tslint": ">=4.0.1"
+    "tslint": ">=5.0.0"
   },
   "dependencies": {
-    "tslint-config-standard": "2.0.0",
-    "tslint-eslint-rules": "3.0.0"
+    "tslint-config-standard": "3.0.0",
+    "tslint-eslint-rules": "3.4.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
