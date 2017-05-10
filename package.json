@@ -34,15 +34,15 @@
     "tslint": ">=5.0.0"
   },
   "dependencies": {
-    "tslint-config-standard": "3.0.0",
-    "tslint-eslint-rules": "3.4.0"
+    "tslint-config-standard": "5.0.2",
+    "tslint-eslint-rules": "4.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-tslint": "^7.0.1",
     "gulp-util": "^3.0.7",
     "through": "^2.3.8",
-    "tslint": "^4.0.1",
+    "tslint": "^5",
     "typescript": "^2"
   }
 }
