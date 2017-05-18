@@ -6,19 +6,23 @@ const gutil = require('gulp-util');
 const PluginError = gutil.PluginError;
 
 function positiveTest(config) {
+  var program = tslint.Linter.createProgram('./tsconfig.json')
   return gulp.src(`spec/${config}/*.pass.ts`)
     .pipe(gulpTslint({
       configuration: `./${config}.js`,
-      formatter: 'verbose'
+      formatter: 'verbose',
+      program
     }))
     .pipe(gulpTslint.report());
 }
 
 function negativeTest(config) {
+  var program = tslint.Linter.createProgram('./tsconfig.json')
   return gulp.src(`spec/${config}/*.fail.ts`)
     .pipe(gulpTslint({
       configuration: `./${config}.js`,
-      formatter: 'verbose'
+      formatter: 'verbose',
+      program
     }))
     .pipe((function () {
       var hasError = false;

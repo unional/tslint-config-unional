@@ -38,11 +38,12 @@
     "tslint-eslint-rules": "4.0.0"
   },
   "devDependencies": {
+    "@types/gulp": "^4.0.2",
     "gulp": "^3.9.1",
-    "gulp-tslint": "^7.0.1",
+    "gulp-tslint": "^8.0.0",
     "gulp-util": "^3.0.7",
     "through": "^2.3.8",
     "tslint": "^5",
-    "typescript": "^2"
+    "typescript": "^2.3.2"
   }
 }
