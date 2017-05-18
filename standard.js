@@ -22,6 +22,11 @@ module.exports = {
       "check-open-brace",
       "check-whitespace"
     ],
-    "one-variable-per-declaration": [true, "ignore-for-loop"]
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }]
   }
 }
