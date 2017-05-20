@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/unional/typescript",
   "peerDependencies": {
-    "tslint": ">=4.0.0"
+    "tslint": ">=5.0.0"
   },
   "dependencies": {
     "tslint-config-standard": "5.0.2",
@@ -43,7 +43,7 @@
     "gulp-tslint": "^8.0.0",
     "gulp-util": "^3.0.7",
     "through": "^2.3.8",
-    "tslint": "^4.5.1",
+    "tslint": "^5.2.0",
     "typescript": "^2.3.2"
   }
 }
