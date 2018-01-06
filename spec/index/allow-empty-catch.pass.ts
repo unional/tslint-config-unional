@@ -1,0 +1,4 @@
+try {
+  // do something
+}
+catch { }

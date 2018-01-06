@@ -17,6 +17,7 @@ module.exports = {
     "max-line-length": false,
     "member-ordering": false,
     "no-consecutive-blank-lines": [true, 2],
+    "no-empty":  [true, "allow-empty-catch"],
     "one-line": [
       true,
       "check-open-brace",

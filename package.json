@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-unional",
-  "version": "0.8.0",
+  "version": "0.0.0-development",
   "description": "tslint config that follows uninoal/typescript style guide",
   "main": "index.js",
   "files": [
@@ -10,11 +10,12 @@
     "strict.js"
   ],
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/unional/typescript"
+    "url": "https://github.com/unional/tslint-config-unional"
   },
   "keywords": [
     "tslint",
@@ -27,23 +28,24 @@
   "author": "Homa Wong (unional)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/unional/typescript/issues"
+    "url": "https://github.com/unional/tslint-config-unional/issues"
   },
-  "homepage": "https://github.com/unional/typescript",
+  "homepage": "https://github.com/unional/tslint-config-unional",
   "peerDependencies": {
-    "tslint": ">=5.0.0"
+    "tslint": ">=5.5.0"
   },
   "dependencies": {
     "tslint-config-standard": "7.0.0",
     "tslint-eslint-rules": "4.1.1"
   },
   "devDependencies": {
-    "@types/gulp": "^4.0.2",
+    "@types/gulp": "^4.0.5",
     "gulp": "^3.9.1",
-    "gulp-tslint": "^8.0.0",
+    "gulp-tslint": "^8.1.2",
     "gulp-util": "^3.0.7",
     "through": "^2.3.8",
-    "tslint": "^5.2.0",
-    "typescript": "^2.3.2"
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2",
+    "semantic-release": "^11.0.2"
   }
 }
