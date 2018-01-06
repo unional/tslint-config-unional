@@ -61,7 +61,7 @@ Also, the best thing to do and file issues on your IDE so that you can use the s
 
 ## Versioning
 
-- **patch** some rules are loosen thus will not cause build to fail.
+- **patch** loosen rules and will not cause build to fail.
 - **minor** not used as adding rules will likely cause build to fail.
 - **major** adding rules or adding new styles, or making rule more strict then before.
 
