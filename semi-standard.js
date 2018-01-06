@@ -1,5 +1,5 @@
 module.exports = {
-  extends: 'tslint-config-unional/standard',
+  extends: './standard',
   rules: {
     "align": true,
     "semicolon": false

@@ -69,11 +69,21 @@ gulp.task('tslint-standard-negative', function () {
   return negativeTest('standard');
 });
 
+gulp.task('tslint-semi-standard-positive', function () {
+  return positiveTest('semi-standard');
+});
+
+gulp.task('tslint-semi-standard-negative', function () {
+  return negativeTest('semi-standard');
+});
+
 gulp.task('tslint', [
   'tslint-index-positive',
   'tslint-index-negative',
   'tslint-standard-positive',
   'tslint-standard-negative',
+  'tslint-semi-standard-positive',
+  'tslint-semi-standard-negative',
   'tslint-strict-positive',
   'tslint-strict-negative'
 ]);

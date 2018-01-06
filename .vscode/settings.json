@@ -6,6 +6,14 @@
         "tsconfig.*.json"
       ],
       "url": "http://json.schemastore.org/tsconfig"
+    },
+    {
+      "fileMatch": [
+        "semi-standard.js",
+        "standard.js",
+        "strict.js"
+      ],
+      "url": "http://json.schemastore.org/tslint"
     }
   ]
 }
