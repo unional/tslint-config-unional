@@ -1,9 +1,15 @@
 # tslint-config-unional
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/unional/tslint-config-unional.svg)](https://greenkeeper.io/)
 
-[![Stories in Ready](https://badge.waffle.io/unional/tslint-config-unional.png?label=ready&title=Ready)](https://waffle.io/unional/tslint-config-unional)
-[![Build Status](https://travis-ci.org/unional/tslint-config-unional.svg?branch=master)](https://travis-ci.org/unional/tslint-config-unional)
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+[![Build status][travis-image]][travis-url]
+
+[![Greenkeeper][greenkeeper-image]][greenkeeper-url]
+[![Semantic Release][semantic-release-image]][semantic-release-url]
+
+[![Stories in Ready][waffle-image]][waffle-url]
+[![Visual Studio Code][vscode-image]][vscode-url]
 
 A [`tslint`](https://github.com/palantir/tslint) extension package with several styles to choose from.
 
@@ -62,3 +68,18 @@ Also, the best thing to do and file issues on your IDE so that you can use the s
 ## LICENSE
 
 MIT
+
+[npm-image]: https://img.shields.io/npm/v/tslint-config-unional.svg?style=flat
+[npm-url]: https://npmjs.org/package/tslint-config-unional
+[downloads-image]: https://img.shields.io/npm/dm/tslint-config-unional.svg?style=flat
+[downloads-url]: https://npmjs.org/package/tslint-config-unional
+[travis-image]: https://img.shields.io/travis/unional/tslint-config-unional/master.svg?style=flat
+[travis-url]: https://travis-ci.org/unional/tslint-config-unional?branch=master
+[greenkeeper-image]:https://badges.greenkeeper.io/unional/tslint-config-unional.svg
+[greenkeeper-url]:https://greenkeeper.io/
+[semantic-release-image]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-url]:https://github.com/semantic-release/semantic-release
+[vscode-image]:https://img.shields.io/badge/vscode-ready-green.svg
+[vscode-url]:https://code.visualstudio.com/
+[waffle-image]:https://badge.waffle.io/unional/tslint-config-unional.png?label=ready&title=Ready
+[waffle-url]:https://waffle.io/unional/tslint-config-unional
