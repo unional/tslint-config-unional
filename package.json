@@ -43,9 +43,10 @@
     "gulp": "^3.9.1",
     "gulp-tslint": "^8.1.2",
     "gulp-util": "^3.0.7",
+    "lodash.uniq": "^4.5.0",
+    "semantic-release": "^12.2.2",
     "through": "^2.3.8",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2",
-    "semantic-release": "^12.2.2"
+    "typescript": "^2.6.2"
   }
 }

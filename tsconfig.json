@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "strictNullChecks": true
   }
 }

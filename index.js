@@ -36,16 +36,18 @@ module.exports = {
     "no-bitwise": false,
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": false,
-    "no-console": [
-      true,
-      "assert",
-      "count",
-      "log",
-      "warn",
-      "trace",
-      "error",
-      "debug"
-    ],
+    "no-console": {
+      "severity": "warning",
+      "options": [
+        "assert",
+        "count",
+        "log",
+        "warn",
+        "trace",
+        "error",
+        "debug"
+      ]
+    },
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-variable": true,
