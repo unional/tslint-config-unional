@@ -1,4 +1,4 @@
 /* tslint:disable:no-unused-variable */
 {
-  let var1, var2;
+  let var1, var2
 }

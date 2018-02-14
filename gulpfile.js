@@ -1,12 +1,14 @@
 const gulp = require('gulp');
 const gulpTslint = require('gulp-tslint');
+const uniq = require('lodash.uniq');
+const path = require('path');
 const tslint = require('tslint');
 const through = require('through');
 const gutil = require('gulp-util');
 const PluginError = gutil.PluginError;
 
 function positiveTest(config) {
-  var program = tslint.Linter.createProgram('./tsconfig.json')
+  var program = tslint.Linter.createProgram('./tsconfig.json');
   return gulp.src(`spec/${config}/*.pass.ts`)
     .pipe(gulpTslint({
       configuration: `./${config}.js`,
@@ -15,28 +17,36 @@ function positiveTest(config) {
     }))
     .pipe(gulpTslint.report());
 }
-
-function negativeTest(config) {
-  var program = tslint.Linter.createProgram('./tsconfig.json')
-  return gulp.src(`spec/${config}/*.fail.ts`)
+function negativeTest(config, severity = 'error') {
+  var program = tslint.Linter.createProgram('./tsconfig.json');
+  return gulp.src(`spec/${config}/*.${severity}.ts`)
     .pipe(gulpTslint({
       configuration: `./${config}.js`,
       formatter: 'verbose',
       program
     }))
     .pipe((function () {
-      var hasError = false;
+      let errMsg
       return through(function (file) {
-        if (file.tslint.failureCount === 0) {
-          gutil.log(
-            `[${gutil.colors.cyan('gulp-tslint')}]`,
-            gutil.colors.red(`error: ${file.tslint.failureCount}`),
-            `(negative) ${file.relative}`);
-          hasError = true;
+        const filename = path.basename(file.history[0])
+        const matches = new RegExp(`(.*)\\.(\\d*)\\.${severity}\\.ts`).exec(filename)
+        const ruleName = matches[1]
+        const count = matches[2]
+        const rules = file.tslint.failures.filter(f => f.ruleName === ruleName && f.ruleSeverity === severity)
+        if (rules.length === 0) {
+          errMsg = `[${gutil.colors.cyan(config)}] ${gutil.colors.red(`${filename} did not trigger '${ruleName}'`)}`
+        }
+        else if (rules.length != count) {
+          errMsg = `[${gutil.colors.cyan(config)}] ${gutil.colors.red(`${filename} expected ${failCount} violation of '${ruleId}' but received ${rules.length}`)}`
+        }
+        else {
+          const unexpectedRules = uniq(file.tslint.failures.filter(f => f.ruleName !== ruleName).map(f => `'${f.ruleName}'`))
+          if (unexpectedRules.length > 1)
+            errMsg = `[${gutil.colors.cyan(config)}] ${gutil.colors.red(`${filename} triggered unexpected rule(s): ${unexpectedRules.join(', ')}`)}`
         }
       }, function () {
-        if (hasError) {
-          this.emit('error', new PluginError('gulp-tslint', 'Failed negative test(s).'));
+        if (errMsg) {
+          this.emit('error', new PluginError('gulp-tslint', errMsg));
         } else {
           this.emit('end');
         }
@@ -44,48 +54,24 @@ function negativeTest(config) {
     })());
 }
 
-gulp.task('tslint-index-positive', function () {
-  return positiveTest('index');
-});
+function buildTasks(styles) {
+  const entries = [];
+  styles.forEach(s => {
+    const p = `tslint-${s}-positive`;
+    entries.push(p);
+    gulp.task(p, () => positiveTest(s));
 
-gulp.task('tslint-index-negative', function () {
-  return negativeTest('index');
-});
+    const e = `tslint-${s}-error`;
+    entries.push(e);
+    gulp.task(e, () => negativeTest(s));
 
-gulp.task('tslint-strict-positive', function () {
-  return positiveTest('strict');
-});
+    const w = `tslint-${s}-warning`;
+    entries.push(w);
+    gulp.task(w, () => negativeTest(s, 'warning'));
+  });
+  return entries;
+}
 
-gulp.task('tslint-strict-negative', function () {
-  return negativeTest('strict');
-});
-
-
-gulp.task('tslint-standard-positive', function () {
-  return positiveTest('standard');
-});
-
-gulp.task('tslint-standard-negative', function () {
-  return negativeTest('standard');
-});
-
-gulp.task('tslint-semi-standard-positive', function () {
-  return positiveTest('semi-standard');
-});
-
-gulp.task('tslint-semi-standard-negative', function () {
-  return negativeTest('semi-standard');
-});
-
-gulp.task('tslint', [
-  'tslint-index-positive',
-  'tslint-index-negative',
-  'tslint-standard-positive',
-  'tslint-standard-negative',
-  'tslint-semi-standard-positive',
-  'tslint-semi-standard-negative',
-  'tslint-strict-positive',
-  'tslint-strict-negative'
-]);
+gulp.task('tslint', buildTasks(['index', 'standard', 'semi-standard', 'strict']));
 
 gulp.task('default', ['tslint']);

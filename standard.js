@@ -17,6 +17,18 @@ module.exports = {
     "max-line-length": false,
     "member-ordering": false,
     "no-consecutive-blank-lines": [true, 2],
+    "no-console": {
+      "severity": "warning",
+      "options": [
+        "assert",
+        "count",
+        "log",
+        "warn",
+        "trace",
+        "error",
+        "debug"
+      ]
+    },
     "no-empty":  [true, "allow-empty-catch"],
     "one-line": [
       true,
