@@ -17,7 +17,8 @@ function positiveTest(config) {
     }))
     .pipe(gulpTslint.report());
 }
-function negativeTest(config, severity = 'error') {
+function negativeTest(config, severity) {
+  if (!severity) severity = 'error'
   var program = tslint.Linter.createProgram('./tsconfig.json');
   return gulp.src(`spec/${config}/*.${severity}.ts`)
     .pipe(gulpTslint({
