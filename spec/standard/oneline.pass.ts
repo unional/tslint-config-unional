@@ -1,4 +1,4 @@
-let oneLine = 2
+export let oneLine = 2
 
 if (oneLine) {
   oneLine = 1

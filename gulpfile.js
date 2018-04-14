@@ -30,6 +30,8 @@ function negativeTest(config, severity = 'error') {
       return through(function (file) {
         const filename = path.basename(file.history[0])
         const matches = new RegExp(`(.*)\\.(\\d*)\\.${severity}\\.ts`).exec(filename)
+        if (!matches)
+          throw new Error(`Unable to process '${filename}'. Missing number of ${severity}s expected?`)
         const ruleName = matches[1]
         const count = matches[2]
         const rules = file.tslint.failures.filter(f => f.ruleName === ruleName && f.ruleSeverity === severity)
@@ -37,7 +39,7 @@ function negativeTest(config, severity = 'error') {
           errMsg = `[${gutil.colors.cyan(config)}] ${gutil.colors.red(`${filename} did not trigger '${ruleName}'`)}`
         }
         else if (rules.length != count) {
-          errMsg = `[${gutil.colors.cyan(config)}] ${gutil.colors.red(`${filename} expected ${failCount} violation of '${ruleId}' but received ${rules.length}`)}`
+          errMsg = `[${gutil.colors.cyan(config)}] ${gutil.colors.red(`${filename} expected ${count} violation of '${ruleName}' but received ${rules.length}`)}`
         }
         else {
           const unexpectedRules = uniq(file.tslint.failures.filter(f => f.ruleName !== ruleName).map(f => `'${f.ruleName}'`))
@@ -57,21 +59,19 @@ function negativeTest(config, severity = 'error') {
 function buildTasks(styles) {
   const entries = [];
   styles.forEach(s => {
-    const p = `tslint-${s}-positive`;
+    const p = `${s}-pass`;
     entries.push(p);
     gulp.task(p, () => positiveTest(s));
 
-    const e = `tslint-${s}-error`;
+    const e = `${s}-error`;
     entries.push(e);
     gulp.task(e, () => negativeTest(s));
 
-    const w = `tslint-${s}-warning`;
+    const w = `${s}-warning`;
     entries.push(w);
     gulp.task(w, () => negativeTest(s, 'warning'));
   });
   return entries;
 }
 
-gulp.task('tslint', buildTasks(['index', 'standard', 'semi-standard', 'strict']));
-
-gulp.task('default', ['tslint']);
+gulp.task('default', buildTasks(['index', 'standard', 'semi-standard', 'strict']));
