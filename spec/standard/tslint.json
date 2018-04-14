@@ -1,3 +1,3 @@
 {
-  "extends": "../standard.js"
+  "extends": "../../standard.js"
 }
