@@ -23,9 +23,7 @@ module.exports = {
         "assert",
         "count",
         "log",
-        "warn",
         "trace",
-        "error",
         "debug"
       ]
     },
