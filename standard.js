@@ -28,6 +28,7 @@ module.exports = {
       ]
     },
     "no-empty":  [true, "allow-empty-catch"],
+    "no-unused-variable": undefined,
     "one-line": [
       true,
       "check-open-brace",
