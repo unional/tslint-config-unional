@@ -1,4 +1,7 @@
-module.exports = {
+var tsc = require('typescript')
+var compareVersions = require('compare-versions')
+
+var setting = {
   extends: 'tslint-config-standard',
   rules: {
     // https://github.com/Microsoft/TypeScript/issues/10392
@@ -28,7 +31,6 @@ module.exports = {
       ]
     },
     "no-empty":  [true, "allow-empty-catch"],
-    "no-unused-variable": undefined,
     "one-line": [
       true,
       "check-open-brace",
@@ -42,3 +44,9 @@ module.exports = {
     }]
   }
 }
+
+if (compareVersions(tsc.version, '2.9') >=0) {
+  settings.rules['no-unused-variable'] = undefined
+}
+
+module.exports = setting
