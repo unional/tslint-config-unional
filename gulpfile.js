@@ -74,4 +74,4 @@ function buildTasks(styles) {
   return entries;
 }
 
-gulp.task('default', buildTasks(['index', 'standard', 'semi-standard', 'strict']));
+gulp.task('default', gulp.parallel(buildTasks(['index', 'standard', 'semi-standard', 'strict'])));
