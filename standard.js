@@ -46,7 +46,7 @@ var setting = {
 }
 
 if (compareVersions(tsc.version, '2.9') >=0) {
-  settings.rules['no-unused-variable'] = undefined
+  setting.rules['no-unused-variable'] = undefined
 }
 
 module.exports = setting
