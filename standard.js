@@ -30,7 +30,7 @@ var setting = {
         "debug"
       ]
     },
-    "no-empty":  [true, "allow-empty-catch"],
+    "no-empty": [true, "allow-empty-catch"],
     "one-line": [
       true,
       "check-open-brace",
@@ -45,8 +45,9 @@ var setting = {
   }
 }
 
-if (compareVersions(tsc.version, '2.9') >=0) {
-  setting.rules['no-unused-variable'] = undefined
+if (compareVersions(tsc.version, '2.9') >= 0) {
+  setting.rules['no-unused-variable'] = false
+  setting.rules['no-unnecessary-type-assertion'] = false
 }
 
 module.exports = setting
