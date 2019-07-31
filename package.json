@@ -35,7 +35,7 @@
     "tslint": ">=5.5.0"
   },
   "dependencies": {
-    "compare-versions": "^3.4.0",
+    "compare-versions": "^3.5.1",
     "tslint-config-standard": "^8.0.1",
     "tslint-eslint-rules": "^5.4.0"
   },
